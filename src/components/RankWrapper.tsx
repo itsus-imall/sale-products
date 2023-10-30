@@ -15,10 +15,10 @@ export default async function RankWrapper() {
   const { review_count } = await getProductsReviewCount(categoryProductsInfo);
 
   return (
-    <section className='rank-wrapper'>
+    <section>
       <h2 className='text-mainTitle px-4'>할인관 실시간 랭킹</h2>
-      <ul className='product-card-wrapper flex-nowrap flex gap-4 overflow-y-scroll px-4'>
-        {productsInfo.map((info, index) => (
+      <ul className='product-card-wrapper flex-nowrap flex gap-4 overflow-y-scroll px-4 my-4 scrollbar-hide'>
+        {productsInfo.slice(0, 12).map((info, index) => (
           <RankCard
             key={`rank_${info.product_no}`}
             productInfo={info}
@@ -33,7 +33,7 @@ export default async function RankWrapper() {
         ))}
       </ul>
       <p className='text-rightGray text-price px-4'>
-        평일 오후 12시까지 결제 시
+        평일 오후 12시까지 결제 시 당일 출고되는 상품입니다.
       </p>
     </section>
   );

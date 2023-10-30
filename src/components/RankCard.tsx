@@ -29,7 +29,7 @@ export default function RankCard({
       className='flex-2 max-w-300 flex flex-col gap-y-1'
     >
       <Image src={list_image} width={500} height={500} alt={product_name} />
-      <span className='border-b border-rightGray block'>{rank}</span>
+      <span className='border-b border-[#d9d9d9] block'>{rank}</span>
       <div className='flex flex-row items-baseline gap-1 whitespace-nowrap'>
         <strong className='text-red text-salePrice'>
           {Math.floor(salePercent)}%

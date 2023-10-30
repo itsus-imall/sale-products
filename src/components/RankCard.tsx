@@ -26,27 +26,27 @@ export default function RankCard({
     <li
       data-product_no={product_no}
       onClick={onClick}
-      className='flex-2 max-w-300 flex flex-col gap-y-1'
+      className='flex-2.5 max-w-300 flex flex-col gap-y-1'
     >
       <Image src={list_image} width={500} height={500} alt={product_name} />
-      <span className='border-b border-[#d9d9d9] block'>{rank}</span>
+      <span className='border-b border-[#d9d9d9] block text-0.8rem'>
+        {rank < 10 ? `0${rank}` : rank}
+      </span>
       <div className='flex flex-row items-baseline gap-1 whitespace-nowrap'>
-        <strong className='text-red text-salePrice'>
+        <strong className='text-red text-1.2rem'>
           {Math.floor(salePercent)}%
         </strong>
-        <p className='text-black text-salePrice'>
+        <p className='text-black text-1.2rem'>
           {Number(discountPrice)?.toLocaleString()}원
         </p>
-        <p className='line-through text-rightGray text-price'>
+        <p className='line-through text-rightGray text-0.8rem'>
           {Number(price).toLocaleString()}원
         </p>
       </div>
-      <p className='text-productName'>{product_name}</p>
+      <p className='text-0.8rem text-overflow'>{product_name}</p>
       <div className='flex flex-row items-baseline gap-1'>
-        <p className='text-price text-white bg-drakGray font-bold box-content px-2 rounded'>
-          오늘 출발
-        </p>
-        <p className='text-rightGray text-price'>리뷰 {reviewCount}</p>
+        <p className='shipping-tag'>오늘 출발</p>
+        <p className='text-rightGray text-0.8rem'>리뷰 {reviewCount}</p>
       </div>
     </li>
   );

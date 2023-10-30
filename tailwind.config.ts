@@ -19,29 +19,21 @@ const config: Config = {
         white: '#fff',
       },
       fontSize: {
-        mainTitle: [
+        '1.5rem': [
           '1.5rem',
           {
             lineHeight: '1',
             fontWeight: 'bold',
           },
         ],
-        productName: [
-          '0.8rem',
-          {
-            fontWeight: '400',
-            lineHeight: '1.2',
-            letterSpacing: '-0.3px',
-          },
-        ],
-        price: [
+        '0.8rem': [
           '0.8rem',
           {
             fontWeight: '400',
             letterSpacing: '-0.3px',
           },
         ],
-        salePrice: [
+        '1.2rem': [
           '1.1rem',
           {
             fontWeight: 'bold',
@@ -50,7 +42,7 @@ const config: Config = {
         ],
       },
       flex: {
-        '2': '0 0 calc(100% / 2 - 2rem)',
+        '2.5': '0 0 calc(100% / 2 - 2rem)',
       },
     },
   },

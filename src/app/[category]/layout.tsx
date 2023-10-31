@@ -1,4 +1,4 @@
-import { getCategory } from '@/services/\bapis';
+import { getCategory, getSubCategory } from '@/services/\bapis';
 import Link from 'next/link';
 
 type propsType = {
@@ -10,8 +10,11 @@ type propsType = {
 
 export default async function CategoryLayout({ children, params }: propsType) {
   const { category: categoryParam } = params;
-  const categoryInfo = await getCategory('1368');
-  console.log(+categoryParam);
+  const categoryInfo = await getCategory(categoryParam);
+  const subCategoryInfo = await getSubCategory(
+    categoryInfo[0].parent_category_no + '',
+  );
+  console.log(subCategoryInfo);
   return (
     <section className='py-4 border-t-8'>
       <h2 className='text-1.5rem px-4'>
@@ -19,7 +22,7 @@ export default async function CategoryLayout({ children, params }: propsType) {
         원하는 상품 찾기
       </h2>
       <nav className='relative flex px-4 border-b mt-4'>
-        {categoryInfo.map(({ category_name, category_no }) => {
+        {subCategoryInfo.map(({ category_name, category_no }) => {
           const selected = +categoryParam === category_no;
           return (
             <Link

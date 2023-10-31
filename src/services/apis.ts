@@ -27,6 +27,25 @@ export const getCategory = async (
 ): Promise<categoryType[]> => {
   const res = await fetch(
     `${BASE_URL}/category?categoryNumber=${categoryNumber}`,
+    {
+      next: {
+        revalidate: 0,
+      },
+    },
+  );
+  return await res.json();
+};
+
+export const getSubCategory = async (
+  categoryNumber: string,
+): Promise<categoryType[]> => {
+  const res = await fetch(
+    `${BASE_URL}/subCategory?categoryNumber=${categoryNumber}`,
+    {
+      next: {
+        revalidate: 0,
+      },
+    },
   );
   return await res.json();
 };
@@ -36,6 +55,11 @@ export const getCategoryProduct = async (
 ): Promise<categoryProductType[]> => {
   const res = await fetch(
     `${BASE_URL}/categoryProduct?categoryNumber=${categoryNumber}`,
+    {
+      next: {
+        revalidate: 0,
+      },
+    },
   );
   return await res.json();
 };
@@ -45,6 +69,9 @@ export const getProductsInfo = async (
 ): Promise<productInfoType[]> => {
   const productsNumber = payload.map(product => product.product_no);
   const res = await fetch(`${BASE_URL}/productInfo`, {
+    next: {
+      revalidate: 0,
+    },
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

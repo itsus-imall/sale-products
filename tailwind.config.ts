@@ -43,6 +43,7 @@ const config: Config = {
       },
       flex: {
         '2.5': '0 0 calc(100% / 2 - 2rem)',
+        '4': '0 0 calc(100% / 4)',
       },
     },
   },

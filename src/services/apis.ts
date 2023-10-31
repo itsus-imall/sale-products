@@ -3,6 +3,7 @@ const BASE_URL = 'https://itsus.co.kr:5555/api/imall/saleProducts';
 export type categoryType = {
   category_no: number;
   category_name: string;
+  parent_category_no: number;
 };
 
 export type categoryProductType = {

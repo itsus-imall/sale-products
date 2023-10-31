@@ -28,7 +28,7 @@ export default function RankCard({
       onClick={onClick}
       className='flex-2.5 max-w-300 flex flex-col gap-y-1'
     >
-      <Image src={list_image} width={500} height={500} alt={product_name} />
+      <Image src={list_image} width={300} height={300} alt={product_name} />
       <span className='border-b border-[#d9d9d9] block text-0.8rem'>
         {rank < 10 ? `0${rank}` : rank}
       </span>

@@ -19,4 +19,25 @@
     overflow: hidden;
     -webkit-box-orient: vertical;
   }
+  .filter {
+    clip-path: polygon(
+      50% 0%,
+      100% 0,
+      60% 48%,
+      60% 100%,
+      37% 86%,
+      37% 48%,
+      0 0
+    );
+    @apply bg-red;
+  }
+  .a::before {
+    content: '';
+    position: absolute;
+    width: calc(100% / 4 - 0.5rem);
+    height: 0.25rem;
+    bottom: 0;
+    left: 0;
+    transform: translateY(50%);
+  }
 }

@@ -29,7 +29,7 @@ export const getCategory = async (
     `${BASE_URL}/category?categoryNumber=${categoryNumber}`,
     {
       next: {
-        revalidate: 0,
+        revalidate: 3000,
       },
     },
   );
@@ -43,7 +43,7 @@ export const getSubCategory = async (
     `${BASE_URL}/subCategory?categoryNumber=${categoryNumber}`,
     {
       next: {
-        revalidate: 0,
+        revalidate: 3000,
       },
     },
   );
@@ -57,7 +57,7 @@ export const getCategoryProduct = async (
     `${BASE_URL}/categoryProduct?categoryNumber=${categoryNumber}`,
     {
       next: {
-        revalidate: 0,
+        revalidate: 3000,
       },
     },
   );
@@ -70,7 +70,7 @@ export const getProductsInfo = async (
   const productsNumber = payload.map(product => product.product_no);
   const res = await fetch(`${BASE_URL}/productInfo`, {
     next: {
-      revalidate: 0,
+      revalidate: 3000,
     },
     method: 'POST',
     headers: {

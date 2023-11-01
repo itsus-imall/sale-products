@@ -6,7 +6,7 @@ import {
   getProductsInfo,
   getProductsReviewCount,
 } from '@/services/\bapis';
-import RankCard from '@/components/RankCard';
+import ProductCard from '@/components/ProductCard';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -31,7 +31,7 @@ export default async function RootLayout({ children }: propsType) {
             <h2 className='text-1.5rem px-4'>할인관 실시간 랭킹</h2>
             <ul className='flex-nowrap flex gap-4 overflow-y-scroll px-4 my-4 scrollbar-hide '>
               {productsInfo.slice(0, 12).map((info, index) => (
-                <RankCard
+                <ProductCard
                   key={`rank_${info.product_no}`}
                   productInfo={info}
                   rank={index + 1}
@@ -49,6 +49,7 @@ export default async function RootLayout({ children }: propsType) {
               평일 오후 12시까지 결제 시 당일 출고되는 상품입니다.
             </p>
           </section>
+
           {children}
         </main>
       </body>

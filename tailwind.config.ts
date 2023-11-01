@@ -34,9 +34,15 @@ const config: Config = {
           },
         ],
         '1.2rem': [
-          '1.1rem',
+          '1.2rem',
           {
             fontWeight: 'bold',
+            letterSpacing: '-0.3px',
+          },
+        ],
+        '0.7rem': [
+          '0.7rem',
+          {
             letterSpacing: '-0.3px',
           },
         ],

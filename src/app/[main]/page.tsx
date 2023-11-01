@@ -7,14 +7,15 @@ type propsType = {
   params: {
     main: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default async function MainPage({ params }: propsType) {
+export default async function MainPage({ params, searchParams }: propsType) {
   const { main } = params;
   return (
     <>
       <SubCategoryWrapper main={main} />
-      <ProductWrapper categoryNumber={main} />
+      <ProductWrapper categoryNumber={main} searchParams={searchParams} />
     </>
   );
 }

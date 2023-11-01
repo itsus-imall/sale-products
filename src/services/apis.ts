@@ -22,20 +22,6 @@ export type reviewCountType = {
   review_count: { [key: string]: number };
 };
 
-export const getCategory = async (
-  categoryNumber: string,
-): Promise<categoryType[]> => {
-  const res = await fetch(
-    `${BASE_URL}/category?categoryNumber=${categoryNumber}`,
-    {
-      next: {
-        revalidate: 3000,
-      },
-    },
-  );
-  return await res.json();
-};
-
 export const getSubCategory = async (
   categoryNumber: string,
 ): Promise<categoryType[]> => {

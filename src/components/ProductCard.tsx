@@ -26,7 +26,9 @@ export default function ProductCard({
     <li
       data-product_no={product_no}
       onClick={onClick}
-      className='flex-2.5 max-w-300 flex flex-col gap-y-1'
+      className={`${
+        rank ? 'flex-2.5' : 'flex-2'
+      } max-w-300 flex flex-col gap-y-1`}
     >
       <Image src={list_image} width={300} height={300} alt={product_name} />
       {rank ? (

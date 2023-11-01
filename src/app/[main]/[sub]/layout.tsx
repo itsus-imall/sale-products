@@ -1,5 +1,19 @@
-import React from 'react';
+import SubCategoryWrapper from '@/components/SubCategoryWrapper';
 
-export default function layout() {
-  return <div>layout</div>;
+type propsType = {
+  children: React.ReactNode;
+  params: {
+    main: string;
+    sub: string;
+  };
+};
+
+export default function layout({ children, params }: propsType) {
+  const { main, sub } = params;
+  return (
+    <>
+      <SubCategoryWrapper main={main} sub={sub} />
+      {children}
+    </>
+  );
 }

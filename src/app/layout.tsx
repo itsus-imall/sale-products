@@ -7,6 +7,8 @@ import {
   getProductsReviewCount,
 } from '@/services/\bapis';
 import ProductCard from '@/components/ProductCard';
+import mobileBanner from '../../public/images/mobile.jpg';
+import Image from 'next/image';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -27,6 +29,9 @@ export default async function RootLayout({ children }: propsType) {
     <html lang='ko'>
       <body className={openSans.className}>
         <main className='h-screen overflow-scroll'>
+          <section>
+            <Image src={mobileBanner} alt='mobileBanner'></Image>
+          </section>
           <section className='py-4'>
             <h2 className='text-1.5rem px-4'>할인관 실시간 랭킹</h2>
             <ul className='flex-nowrap flex gap-4 overflow-y-scroll px-4 my-4 scrollbar-hide '>

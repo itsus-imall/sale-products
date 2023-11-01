@@ -1,10 +1,12 @@
+import ProductWrapper from '@/components/ProductWrapper';
+
 type propsType = {
   params: {
-    main: string;
+    sub: string;
   };
 };
 
 export default function page({ params }: propsType) {
-  console.log(params);
-  return <div>page</div>;
+  const { sub } = params;
+  return <ProductWrapper categoryNumber={sub} />;
 }

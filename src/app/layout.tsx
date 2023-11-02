@@ -37,7 +37,7 @@ export default async function RootLayout({ children }: propsType) {
           <section className='py-4'>
             <h2 className='text-1.5rem px-4'>할인관 실시간 랭킹</h2>
             <ul className='flex-nowrap flex gap-4 overflow-y-scroll px-4 my-4 scrollbar-hide '>
-              {productsInfo.slice(0, 12).map((info, index) => (
+              {filterProductsInfo.slice(0, 12).map((info, index) => (
                 <ProductCard
                   key={`rank_${info.product_no}`}
                   productInfo={info}

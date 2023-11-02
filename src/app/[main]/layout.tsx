@@ -1,4 +1,4 @@
-import { getSubCategory } from '@/services/\bapis';
+import { getSubCategory } from '@/services/apis';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 

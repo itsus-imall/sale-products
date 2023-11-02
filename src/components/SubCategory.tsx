@@ -1,4 +1,4 @@
-import { categoryType } from '@/services/\bapis';
+import { categoryType } from '@/services/apis';
 import Link from 'next/link';
 
 type propsType = {

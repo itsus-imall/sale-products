@@ -2,7 +2,7 @@ import {
   getCategoryProduct,
   getProductsInfo,
   getProductsReviewCount,
-} from '@/services/apis';
+} from '@/services/apis';
 import RankCard from './ProductCard';
 
 export const revalidate = 0;

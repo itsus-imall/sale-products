@@ -2,7 +2,7 @@ import {
   getCategoryProduct,
   getProductsInfo,
   getProductsReviewCount,
-} from '@/services/\bapis';
+} from '@/services/apis';
 import ProductCard from './ProductCard';
 import HighSaleBox from './HighSaleBox';
 
@@ -18,7 +18,6 @@ export default async function ProductWrapper({
   const categoryProductsInfo = await getCategoryProduct(categoryNumber);
   const productsInfo = await getProductsInfo(categoryProductsInfo);
   const { review_count } = await getProductsReviewCount(categoryProductsInfo);
-  console.log(searchParams);
   return (
     <>
       <HighSaleBox />

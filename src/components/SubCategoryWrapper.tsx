@@ -1,4 +1,4 @@
-import { getSubCategory } from '@/services/\bapis';
+import { getSubCategory } from '@/services/apis';
 import SubCategory from './SubCategory';
 
 type propsType = {

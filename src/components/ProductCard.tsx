@@ -1,5 +1,5 @@
 'use client';
-import { productInfoType } from '@/services/apis';
+import { productInfoType } from '@/services/apis';
 import Image from 'next/image';
 
 type propsType = {

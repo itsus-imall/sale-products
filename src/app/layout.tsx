@@ -5,7 +5,7 @@ import {
   getCategoryProduct,
   getProductsInfo,
   getProductsReviewCount,
-} from '@/services/\bapis';
+} from '@/services/apis';
 import ProductCard from '@/components/ProductCard';
 import mobileBanner from '../../public/images/mobile.jpg';
 import Image from 'next/image';

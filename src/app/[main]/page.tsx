@@ -1,7 +1,7 @@
 import ProductWrapper from '@/components/ProductWrapper';
 import SubCategory from '@/components/SubCategory';
 import SubCategoryWrapper from '@/components/SubCategoryWrapper';
-import { getSubCategory } from '@/services/\bapis';
+import { getSubCategory } from '@/services/apis';
 
 type propsType = {
   params: {

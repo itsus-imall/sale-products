@@ -16,6 +16,7 @@ export type productInfoType = {
   product_name: string;
   price: string;
   list_image: string;
+  discount_price?: string | null | undefined;
 };
 
 export type reviewCountType = {
@@ -75,6 +76,11 @@ export const getProductsReviewCount = async (
     `https://alph.kr/api/module/review/count?mall_id=youngwuk2&shop_no=1&product_no=${productsNumber.join(
       ',',
     )}`,
+    {
+      next: {
+        revalidate: 0,
+      },
+    },
   );
   return await res.json();
 };

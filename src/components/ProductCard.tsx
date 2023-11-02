@@ -5,18 +5,16 @@ import Image from 'next/image';
 type propsType = {
   productInfo: productInfoType;
   rank?: number;
-  discountPrice: string | null | undefined;
   reviewCount: number;
 };
 
 export default function ProductCard({
-  productInfo: { product_no, product_name, price, list_image },
+  productInfo: { product_no, product_name, price, list_image,discount_price },
   rank,
-  discountPrice,
   reviewCount,
 }: propsType) {
   const salePercent =
-    ((Number(price) - Number(discountPrice ?? price)) / Number(price)) * 100;
+    ((Number(price) - Number(discount_price ?? price)) / Number(price)) * 100;
 
   const onClick = (event: React.MouseEvent<HTMLLIElement>) => {
     console.log(event.currentTarget);
@@ -41,7 +39,7 @@ export default function ProductCard({
           {Math.floor(salePercent)}%
         </strong>
         <p className='text-black text-1.2rem'>
-          {Number(discountPrice)?.toLocaleString()}원
+          {Number(discount_price)?.toLocaleString()}원
         </p>
         <p className='line-through text-rightGray text-0.8rem'>
           {Number(price).toLocaleString()}원

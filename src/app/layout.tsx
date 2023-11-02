@@ -9,6 +9,7 @@ import {
 import ProductCard from '@/components/ProductCard';
 import mobileBanner from '../../public/images/mobile.jpg';
 import Image from 'next/image';
+import filterRouter from '@/services/filter';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -25,6 +26,7 @@ export default async function RootLayout({ children }: propsType) {
   const categoryProductsInfo = await getCategoryProduct('1368');
   const productsInfo = await getProductsInfo(categoryProductsInfo);
   const { review_count } = await getProductsReviewCount(categoryProductsInfo);
+  const filterProductsInfo = filterRouter(categoryProductsInfo,productsInfo);
   return (
     <html lang='ko'>
       <body className={openSans.className}>
@@ -40,12 +42,6 @@ export default async function RootLayout({ children }: propsType) {
                   key={`rank_${info.product_no}`}
                   productInfo={info}
                   rank={index + 1}
-                  discountPrice={
-                    categoryProductsInfo.find(
-                      categoryInfo =>
-                        categoryInfo.product_no === info.product_no,
-                    )?.discount_price
-                  }
                   reviewCount={review_count[info.product_no]}
                 />
               ))}

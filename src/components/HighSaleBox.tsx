@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -12,7 +11,7 @@ export default function HighSaleBox() {
     setChecked(event.target.checked);
   };
   return (
-    <div className='py-2 flex justify-end px-4'>
+    <div className='py-2 flex justify-end px-4 align-middle'>
       <input
         id='highsale'
         type='checkbox'
@@ -20,7 +19,9 @@ export default function HighSaleBox() {
         checked={checked}
         onChange={onChange}
       />
-      <label htmlFor='highsale'>높은 할인율</label>
+      <label htmlFor='highsale' className='text-0.8rem text-rightGray'>
+        높은 할인율
+      </label>
     </div>
   );
 }

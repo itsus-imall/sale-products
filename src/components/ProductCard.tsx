@@ -30,7 +30,7 @@ export default function ProductCard({
       onClick={onClick}
       className={`${
         rank ? 'flex-2.5' : 'flex-2'
-      } max-w-300 flex flex-col gap-y-1 cursor-pointer`}
+      } max-w-300 flex flex-col gap-y-1 cursor-pointer min-w-[159px]`}
     >
       <Image src={list_image} width={300} height={300} alt={product_name} />
       {rank ? (

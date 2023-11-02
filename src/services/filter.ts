@@ -3,7 +3,7 @@ import { categoryProductType, productInfoType } from './apis';
 const filterRouter = (
   categorys: categoryProductType[],
   products: productInfoType[],
-  route: string | string[] | undefined,
+  route: string | string[] | undefined = undefined,
 ) => {
   let result;
   const salePrice = filterSalePrice(categorys, products);

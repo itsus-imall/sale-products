@@ -26,7 +26,7 @@ export default async function RootLayout({ children }: propsType) {
   const categoryProductsInfo = await getCategoryProduct('1368');
   const productsInfo = await getProductsInfo(categoryProductsInfo);
   const { review_count } = await getProductsReviewCount(categoryProductsInfo);
-  const filterProductsInfo = filterRouter(categoryProductsInfo,productsInfo);
+  const filterProductsInfo = filterRouter(categoryProductsInfo, productsInfo);
   return (
     <html lang='ko'>
       <body className={openSans.className}>

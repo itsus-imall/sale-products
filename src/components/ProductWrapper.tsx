@@ -19,9 +19,12 @@ export default async function ProductWrapper({
   const categoryProductsInfo = await getCategoryProduct(categoryNumber);
   const productsInfo = await getProductsInfo(categoryProductsInfo);
   const { review_count } = await getProductsReviewCount(categoryProductsInfo);
-  const {filter} = searchParams;
-  const filterProductsInfo = filterRouter(categoryProductsInfo,productsInfo,filter);
-    console.log(filterProductsInfo)
+  const { filter } = searchParams;
+  const filterProductsInfo = filterRouter(
+    categoryProductsInfo,
+    productsInfo,
+    filter,
+  );
   return (
     <>
       <HighSaleBox />

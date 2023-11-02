@@ -31,7 +31,7 @@ export default async function RootLayout({ children }: propsType) {
     <html lang='ko'>
       <body className={openSans.className}>
         <main className='h-screen overflow-scroll'>
-          <section>
+          <section className='mb-2'>
             <Image src={mobileBanner} alt='mobileBanner'></Image>
           </section>
           <section className='py-4'>

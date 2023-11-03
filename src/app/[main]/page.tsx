@@ -3,19 +3,25 @@ import SubCategory from '@/components/SubCategory';
 import SubCategoryWrapper from '@/components/SubCategoryWrapper';
 import { getSubCategory } from '@/services/apis';
 
+import 'swiper/css';
+
 type propsType = {
   params: {
     main: string;
   };
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: { [key: string]: string | undefined };
 };
 
 export default async function MainPage({ params, searchParams }: propsType) {
   const { main } = params;
+  const { sub } = searchParams;
   return (
     <>
       <SubCategoryWrapper main={main} />
-      <ProductWrapper categoryNumber={main} searchParams={searchParams} />
+      <ProductWrapper
+        categoryNumber={sub ?? main}
+        searchParams={searchParams}
+      />
     </>
   );
 }

@@ -14,15 +14,7 @@ export default async function SubCategoryWrapper({
   return (
     <nav className='flex flex-nowrap overflow-x-scroll scrollbar-hide px-4 gap-2 py-4'>
       {subCategory.reverse().map(cate => {
-        const selected = cate.category_no + '' === sub;
-        return (
-          <SubCategory
-            key={cate.category_no}
-            info={cate}
-            main={main}
-            selected={selected}
-          />
-        );
+        return <SubCategory key={cate.category_no} info={cate} />;
       })}
     </nav>
   );

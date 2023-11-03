@@ -29,13 +29,13 @@ export default function ProductCard({
       data-product_no={product_no}
       onClick={onClick}
       className={`${
-        rank ? 'flex-2.5' : 'flex-2'
-      } max-w-300 flex flex-col gap-y-1 cursor-pointer min-w-[159px]`}
+        rank ? 'mt-4 p-2' : 'flex-2 flex flex-col gap-y-1 lg:flex-3'
+      } cursor-pointer relative select-none`}
     >
-      <Image src={list_image} width={300} height={300} alt={product_name} />
+      <Image src={list_image} width={500} height={500} alt={product_name} />
       {rank ? (
-        <span className='border-b border-[#d9d9d9] block text-0.8rem'>
-          {rank < 10 ? `0${rank}` : rank}
+        <span className='text-[2rem] font-bold absolute top-0 left-0 translate-x-1/2 translate-y-[-50%] tracking-tight'>
+          {rank}
         </span>
       ) : null}
       <div className='flex flex-row items-baseline gap-1 whitespace-nowrap'>

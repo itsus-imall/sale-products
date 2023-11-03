@@ -1,21 +1,29 @@
+'use client';
+
 import { categoryType } from '@/services/apis';
-import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 type propsType = {
   info: categoryType;
-  main: string;
-  selected: boolean;
 };
 
-export default function SubCategory({ info, main, selected }: propsType) {
+export default function SubCategory({ info }: propsType) {
+  const router = useRouter();
+  const params = useSearchParams();
+  const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const { category_no } = event.currentTarget.dataset;
+    router.push(`?sub=${category_no}`);
+  };
+  const selected = params.get('sub') === info.category_no + '';
   return (
-    <Link
+    <button
       className={`${
         selected ? 'font-bold border-red' : 'border-rightGray'
       } border  px-3 whitespace-nowrap rounded-xl text-0.8rem py-[0.15rem]`}
-      href={`/${main}/${info.category_no}`}
+      data-category_no={`${info.category_no}`}
+      onClick={onClick}
     >
       {info.category_name}
-    </Link>
+    </button>
   );
 }

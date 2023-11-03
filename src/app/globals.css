@@ -41,3 +41,35 @@
     transform: translateY(50%);
   }
 }
+html .swiper-button-next,
+html .swiper-button-prev {
+  top: 0;
+  bottom: auto;
+  left: auto;
+  right: 0.5rem;
+  transform: translateY(-3rem);
+  width: 2.6rem;
+}
+html .swiper-button-prev {
+  right: 3.625rem;
+}
+
+html .swiper-button-next::after,
+html .swiper-button-prev::after {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+  background-color: #4f4f55;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+@media screen and (min-width:1000px){
+  html{
+    font-size:24px;
+  }
+}

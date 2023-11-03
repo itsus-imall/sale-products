@@ -6,10 +6,10 @@ import {
   getProductsInfo,
   getProductsReviewCount,
 } from '@/services/apis';
-import ProductCard from '@/components/ProductCard';
 import mobileBanner from '../../public/images/mobile.jpg';
 import Image from 'next/image';
 import filterRouter from '@/services/filter';
+import RankWrapper from '@/components/RankWrapper';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -31,26 +31,13 @@ export default async function RootLayout({ children }: propsType) {
     <html lang='ko'>
       <body className={openSans.className}>
         <main className='h-screen overflow-scroll'>
-          <section className='mb-2'>
+          <section className='mb-2 max-w-[1000px] mx-auto'>
             <Image src={mobileBanner} alt='mobileBanner'></Image>
           </section>
-          <section className='py-4'>
-            <h2 className='text-1.5rem px-4'>할인관 실시간 랭킹</h2>
-            <ul className='flex-nowrap flex gap-4 overflow-y-scroll px-4 my-4 scrollbar-hide '>
-              {filterProductsInfo.slice(0, 12).map((info, index) => (
-                <ProductCard
-                  key={`rank_${info.product_no}`}
-                  productInfo={info}
-                  rank={index + 1}
-                  reviewCount={review_count[info.product_no]}
-                />
-              ))}
-            </ul>
-            <p className='text-rightGray text-0.8rem px-4'>
-              평일 오후 12시까지 결제 시 당일 출고되는 상품입니다.
-            </p>
-          </section>
-
+          <RankWrapper
+            filterProductsInfo={filterProductsInfo}
+            review_count={review_count}
+          />
           {children}
         </main>
       </body>

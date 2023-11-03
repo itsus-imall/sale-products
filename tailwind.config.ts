@@ -50,6 +50,7 @@ const config: Config = {
       flex: {
         '2': '0 0 calc(100% / 2 - 0.5rem)',
         '2.5': '0 0 calc(100% / 2 - 2rem)',
+        '3': '0 0 calc(100% / 3 - 0.67rem)',
         '4': '0 0 calc(100% / 4)',
       },
     },

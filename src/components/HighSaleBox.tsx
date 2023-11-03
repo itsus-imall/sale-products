@@ -1,13 +1,17 @@
 'use client';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
 export default function HighSaleBox() {
   const router = useRouter();
-  const [checked, setChecked] = useState(false);
+  const params = useSearchParams();
   const pathname = usePathname();
+  const [checked, setChecked] = useState(false);
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    router.push(`${checked ? `${pathname}` : '?filter=highsale'}`);
+    const sub = params.has('sub')
+      ? `${checked ? '?' : '&'}sub=${params.get('sub')}`
+      : '';
+    router.push(`${checked ? `${pathname}${sub}` : `?filter=highsale${sub}`}`);
     setChecked(event.target.checked);
   };
   return (

@@ -34,6 +34,7 @@ const swiperParams = {
   modules: [EffectCoverflow, Navigation],
   pagination: true,
 };
+
 export default function RankWrapper({
   filterProductsInfo,
   review_count,

@@ -20,7 +20,7 @@ export default function BannerWrapper() {
     };
   }, []);
   return (
-    <section className='mb-2 max-w-[1500px] mx-auto'>
+    <section className='mb-2 max-w-[1024px] mx-auto'>
       <Image src={windowWidth > 1000 ? pc : mobile} alt='mobileBanner' />
     </section>
   );

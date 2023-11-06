@@ -40,7 +40,7 @@ export default function RankWrapper({
   review_count,
 }: propsType) {
   return (
-    <section className='py-4 max-w-[1500px] overflow-hidden mx-auto'>
+    <section className='py-4 max-w-[1024px] overflow-hidden mx-auto'>
       <h2 className='text-1.5rem px-4 mb-8 flex '>
         <RankIcon className='w-7 inline-block h-7 mr-2' />
         실시간 TOP 12

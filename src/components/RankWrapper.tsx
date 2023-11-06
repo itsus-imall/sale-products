@@ -40,7 +40,7 @@ export default function RankWrapper({
   review_count,
 }: propsType) {
   return (
-    <section className='py-4 max-w-[1000px] overflow-hidden mx-auto'>
+    <section className='py-4 max-w-[1500px] overflow-hidden mx-auto'>
       <h2 className='text-1.5rem px-4 mb-8 flex '>
         <RankIcon className='w-7 inline-block h-7 mr-2' />
         실시간 TOP 12
@@ -48,7 +48,7 @@ export default function RankWrapper({
 
       <Swiper
         {...swiperParams}
-        className='mySwiper !my-4 !px-4 !overflow-visible'
+        className='mySwiper !my-4 !px-24 !overflow-visible'
       >
         {filterProductsInfo.slice(0, 12).map((info, index) => (
           <SwiperSlide key={`rank_${info.product_no}`}>

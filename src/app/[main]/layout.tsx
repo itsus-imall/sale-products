@@ -12,7 +12,7 @@ export default async function CategoryLayout({ children, params }: propsType) {
   const { main } = params;
   const category = await getSubCategory('1368');
   return (
-    <section className='py-4 border-t-8 max-w-[1000px] mx-auto'>
+    <section className='py-4 border-t-8 max-w-[1500px] mx-auto'>
       <header>
         <h2 className='text-1.5rem px-4'>
           <div className='filter w-5 h-5 inline-block mr-2' />

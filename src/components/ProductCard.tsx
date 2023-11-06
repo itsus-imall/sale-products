@@ -29,7 +29,7 @@ export default function ProductCard({
       data-product_no={product_no}
       onClick={onClick}
       className={`${
-        rank ? 'mt-4 p-2' : 'flex-2 flex flex-col gap-y-1 lg:flex-3'
+        rank ? 'mt-4 p-2' : 'flex-2 flex flex-col gap-y-1 lg:flex-4'
       } cursor-pointer relative select-none`}
     >
       <Image src={list_image} width={500} height={500} alt={product_name} />

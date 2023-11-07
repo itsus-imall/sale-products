@@ -48,7 +48,7 @@ export default function RankWrapper({
 
       <Swiper
         {...swiperParams}
-        className='mySwiper !my-4 !px-24 !overflow-visible'
+        className='mySwiper !my-4 lg:!px-24 !overflow-visible'
       >
         {filterProductsInfo.slice(0, 12).map((info, index) => (
           <SwiperSlide key={`rank_${info.product_no}`}>

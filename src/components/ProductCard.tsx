@@ -39,10 +39,10 @@ export default function ProductCard({
         </span>
       ) : null}
       <div className='flex flex-row items-baseline gap-1 whitespace-nowrap'>
-        <strong className='text-red text-1.2rem'>
+        <strong className='text-red text-1.1rem'>
           {Math.floor(salePercent)}%
         </strong>
-        <p className='text-black text-1.2rem'>
+        <p className='text-black text-1.1rem'>
           {Number(discount_price)?.toLocaleString()}원
         </p>
         <p className='line-through text-rightGray text-0.8rem'>

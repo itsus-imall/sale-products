@@ -40,6 +40,13 @@ const config: Config = {
             letterSpacing: '-0.3px',
           },
         ],
+        '1.1rem': [
+          '1.1rem',
+          {
+            fontWeight: 'bold',
+            letterSpacing: '-0.3px',
+          },
+        ],
         '0.7rem': [
           '0.7rem',
           {

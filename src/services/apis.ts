@@ -8,7 +8,10 @@ export type categoryType = {
 
 export type categoryProductType = {
   product_no: number;
-  discount_price: string | null;
+  discount_price?: string | null | undefined;
+  product_name: string;
+  price: string;
+  list_image: string;
 };
 
 export type productInfoType = {
@@ -30,7 +33,7 @@ export const getSubCategory = async (
     `${BASE_URL}/subCategory?categoryNumber=${categoryNumber}`,
     {
       next: {
-        revalidate: 3000,
+        revalidate: 3600,
       },
     },
   );
@@ -44,7 +47,7 @@ export const getCategoryProduct = async (
     `${BASE_URL}/categoryProduct?categoryNumber=${categoryNumber}`,
     {
       next: {
-        revalidate: 3000,
+        revalidate: 3600,
       },
     },
   );
@@ -57,7 +60,7 @@ export const getProductsInfo = async (
   const productsNumber = payload.map(product => product.product_no);
   const res = await fetch(`${BASE_URL}/productInfo`, {
     next: {
-      revalidate: 3000,
+      revalidate: 3600,
     },
     method: 'POST',
     headers: {

@@ -1,9 +1,9 @@
 'use client';
-import { productInfoType } from '@/services/apis';
+import { categoryProductType } from '@/services/apis';
 import Image from 'next/image';
 
 type propsType = {
-  productInfo: productInfoType;
+  productInfo: categoryProductType;
   rank?: number;
   reviewCount: number;
 };

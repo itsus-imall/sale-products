@@ -9,13 +9,13 @@ import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { productInfoType } from '@/services/apis';
+import { categoryProductType } from '@/services/apis';
 import { Navigation, EffectCoverflow } from 'swiper/modules';
 
 import RankIcon from '../../public/svg/icon/star-square-svgrepo-com.svg';
 
 type propsType = {
-  filterProductsInfo: productInfoType[];
+  filterProductsInfo: categoryProductType[];
   review_count: { [key: string]: number };
 };
 const swiperParams = {

@@ -1,4 +1,4 @@
-import { categoryProductType, productInfoType } from './apis';
+import { categoryProductType, categoryType, productInfoType } from './apis';
 
 const filterRouter = (
   categorys: categoryProductType[],
@@ -21,13 +21,14 @@ const filterRouter = (
 const filterSalePrice = (
   categorys: categoryProductType[],
   products: productInfoType[],
-) =>
-  products.map(product => {
-    const discount_price = categorys.find(
-      category => category.product_no === product.product_no,
+): categoryProductType[] => {
+  return categorys.map(category => {
+    const find = products.find(
+      product => product.product_no === category.product_no,
     );
-    return { ...product, ...discount_price };
+    return { ...category, ...find };
   });
+};
 
 const filterHighSalePrice = (array: productInfoType[]) =>
   array.sort((a, b) => {

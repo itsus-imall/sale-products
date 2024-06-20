@@ -4,8 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
@@ -18,7 +16,7 @@ type propsType = {
 };
 const swiperParams = {
   grabCousor: true,
-  slidesPerView: 2,
+  slidesPerView: 1.2,
   centeredSlides: true,
   navigation: true,
   modules: [Navigation],
@@ -33,12 +31,14 @@ export default function RankWrapper({
     <section className='py-4 max-w-[1024px] overflow-hidden mx-auto bg-backgroundColorOne'>
       <h2 className='text-0.8rem px-4 mb-8 font-bold text-pointColor text-center'>
         실시간 TOP 12
-        <strong className='block'>품절까지 얼마 남지 않았어요</strong>
+        <strong className='block text-white text-xl mt-[0.5rem]'>
+          품절까지 얼마 남지 않았어요
+        </strong>
       </h2>
 
       <Swiper
         {...swiperParams}
-        className='mySwiper !my-4 lg:!px-12 !overflow-visible'
+        className='mySwiper !my-4 lg:!px-2 !overflow-visible'
       >
         {filterProductsInfo.slice(0, 12).map((info, index) => (
           <SwiperSlide key={`rank_${info.product_no}`}>

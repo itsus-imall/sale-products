@@ -6,6 +6,7 @@ import {
 import ProductCard from './ProductCard';
 import HighSaleBox from './HighSaleBox';
 import filterRouter from '@/services/filter';
+import { Suspense } from 'react';
 
 type propsType = {
   categoryNumber: string;
@@ -28,15 +29,17 @@ export default async function ProductWrapper({
   return (
     <>
       <HighSaleBox />
-      <ul className='flex flex-wrap justify-start gap-4 px-4 lg:px-0'>
-        {filterProductsInfo.map(info => (
-          <ProductCard
-            key={`rank_${info.product_no}`}
-            productInfo={info}
-            reviewCount={review_count[info.product_no]}
-          />
-        ))}
-      </ul>
+      <Suspense fallback={<h1>로딩</h1>}>
+        <ul className='flex flex-wrap justify-start gap-4 px-4 lg:px-0'>
+          {filterProductsInfo.map(info => (
+            <ProductCard
+              key={`rank_${info.product_no}`}
+              productInfo={info}
+              reviewCount={review_count[info.product_no]}
+            />
+          ))}
+        </ul>
+      </Suspense>
     </>
   );
 }

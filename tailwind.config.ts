@@ -17,6 +17,8 @@ const config: Config = {
         drakGray: '#4F4F55',
         black: '#000',
         white: '#fff',
+        backgroundColorOne: '#000B1C',
+        pointColor: '#9AFCFF',
       },
       fontSize: {
         '1.5rem': [

@@ -10,9 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { categoryProductType } from '@/services/apis';
-import { Navigation, EffectCoverflow } from 'swiper/modules';
-
-import RankIcon from '../../public/svg/icon/star-square-svgrepo-com.svg';
+import { Navigation } from 'swiper/modules';
 
 type propsType = {
   filterProductsInfo: categoryProductType[];
@@ -21,17 +19,9 @@ type propsType = {
 const swiperParams = {
   grabCousor: true,
   slidesPerView: 2,
-  effect: 'coverflow',
   centeredSlides: true,
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  },
   navigation: true,
-  modules: [EffectCoverflow, Navigation],
+  modules: [Navigation],
   pagination: true,
 };
 
@@ -40,15 +30,15 @@ export default function RankWrapper({
   review_count,
 }: propsType) {
   return (
-    <section className='py-4 max-w-[1024px] overflow-hidden mx-auto'>
-      <h2 className='text-1.5rem px-4 mb-8 flex '>
-        <RankIcon className='w-7 inline-block h-7 mr-2' />
+    <section className='py-4 max-w-[1024px] overflow-hidden mx-auto bg-backgroundColorOne'>
+      <h2 className='text-0.8rem px-4 mb-8 font-bold text-pointColor text-center'>
         실시간 TOP 12
+        <strong className='block'>품절까지 얼마 남지 않았어요</strong>
       </h2>
 
       <Swiper
         {...swiperParams}
-        className='mySwiper !my-4 lg:!px-24 !overflow-visible'
+        className='mySwiper !my-4 lg:!px-12 !overflow-visible'
       >
         {filterProductsInfo.slice(0, 12).map((info, index) => (
           <SwiperSlide key={`rank_${info.product_no}`}>
@@ -60,9 +50,6 @@ export default function RankWrapper({
           </SwiperSlide>
         ))}
       </Swiper>
-      <p className='text-rightGray text-0.8rem px-4'>
-        평일 오후 12시까지 결제 시 당일 출고되는 상품입니다.
-      </p>
     </section>
   );
 }

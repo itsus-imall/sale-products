@@ -10,11 +10,12 @@ import {
 import filterRouter from '@/services/filter';
 import RankWrapper from '@/components/RankWrapper';
 import BannerWrapper from '@/components/BannerWrapper';
+import { Suspense } from 'react';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '아이몰 할인관',
+  title: '아이몰 할인어택',
   description: '아이몰 상품을 할인된 가격에 만나보세요!',
 };
 

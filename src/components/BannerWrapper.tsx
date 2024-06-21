@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 import mobile from '../../public/images/mobile.jpg';
 import pc from '../../public/images/pc.jpg';
-import banner from '../../public/images/SALE.gif';
 import ClockSvg from '../../public/svg/icon/Vector.svg';
 
 export default function BannerWrapper() {
@@ -24,11 +23,6 @@ export default function BannerWrapper() {
   }, []);
   return (
     <section className='max-w-[1024px] mx-auto relative'>
-      <Image
-        src={banner}
-        alt='90%세일배너'
-        className='absolute -top-1.5 left-0 w-full'
-      />
       <Image src={windowWidth > 1000 ? pc : mobile} alt='mobileBanner' />
       <h3 className='text-white text-center text-sm absolute bottom-8 left-1/2 block -translate-x-1/2 w-full tracking-tighter font-medium'>
         한정수량으로 판매되는 시크릿 할인 상품입니다

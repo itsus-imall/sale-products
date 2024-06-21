@@ -29,8 +29,8 @@ export default async function ProductWrapper({
   return (
     <>
       <HighSaleBox />
-      <Suspense fallback={<h1>로딩</h1>}>
-        <ul className='flex flex-wrap justify-start gap-4 px-4 lg:px-0'>
+      <Suspense fallback={<h1 className='text-white'>로딩</h1>}>
+        <ul className='flex flex-wrap justify-start gap-4 px-4 gap-y-8'>
           {filterProductsInfo.map(info => (
             <ProductCard
               key={`rank_${info.product_no}`}

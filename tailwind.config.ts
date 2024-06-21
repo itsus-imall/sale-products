@@ -61,6 +61,7 @@ const config: Config = {
         '2.5': '0 0 calc(100% / 2 - 2rem)',
         '3': '0 0 calc(100% / 3 - 0.67rem)',
         '4': '0 0 calc(100% / 4 - 0.8rem)',
+        nav: '0 0 calc(100% / 4)',
       },
     },
   },

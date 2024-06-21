@@ -29,18 +29,18 @@ export default function ProductCard({
       data-product_no={product_no}
       onClick={onClick}
       className={`${
-        rank ? 'mt-4 p-2' : ''
+        rank ? 'mt-4' : ''
       } cursor-pointer relative select-none max-w-lg flex-2 flex flex-col gap-y-1 lg:flex-4`}
     >
       <Image
         src={list_image}
-        width={500}
-        height={500}
+        width={1024}
+        height={1024}
         alt={product_name}
         className='rounded-[0.7rem]'
       />
       {rank ? (
-        <span className='text-[2rem] font-bold absolute top-0 left-0 translate-x-[1rem] translate-y-[0.5rem] tracking-tight'>
+        <span className='text-[2rem] font-bold absolute top-0 left-0 translate-x-[0.75rem] translate-y-[0.25rem] tracking-tight'>
           {rank}
         </span>
       ) : null}

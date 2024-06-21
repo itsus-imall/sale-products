@@ -16,11 +16,12 @@ type propsType = {
 };
 const swiperParams = {
   grabCousor: true,
-  slidesPerView: 1.2,
+  slidesPerView: 1.5,
   centeredSlides: true,
   navigation: true,
   modules: [Navigation],
   pagination: true,
+  spaceBetween: 16,
 };
 
 export default function RankWrapper({
@@ -29,9 +30,9 @@ export default function RankWrapper({
 }: propsType) {
   return (
     <section className='py-4 max-w-[1024px] overflow-hidden mx-auto bg-backgroundColorOne'>
-      <h2 className='text-0.8rem px-4 mb-8 font-bold text-pointColor text-center'>
+      <h2 className='main-title'>
         실시간 TOP 12
-        <strong className='block text-white text-xl mt-[0.5rem]'>
+        <strong className='main-title--summary'>
           품절까지 얼마 남지 않았어요
         </strong>
       </h2>

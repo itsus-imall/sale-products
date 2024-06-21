@@ -10,7 +10,6 @@ import {
 import filterRouter from '@/services/filter';
 import RankWrapper from '@/components/RankWrapper';
 import BannerWrapper from '@/components/BannerWrapper';
-import { Suspense } from 'react';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
